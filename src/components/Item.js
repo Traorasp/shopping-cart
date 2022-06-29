@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Item(props) {
-  const { items } = props;
+  const { items, addItemToCart } = props;
 
   return (
     <div id='item-list'>
@@ -13,6 +13,7 @@ function Item(props) {
       <h3>{item.Name}</h3>
       <p>${item.Price}</p>
       <p>{item.Desc}</p>
+      <button onClick={addItemToCart} className={item.Name}>Add To Cart</button>
     </div>
     )
   })}
@@ -22,10 +23,12 @@ function Item(props) {
 
 Item.propTypes = {
   items: PropTypes.array,
+  addItemToCart: PropTypes.func,
 }
 
 Item.defaultProps = {
-  items: []
+  items: [],
+  addItemToCart: () => {},
 }
 
 export default Item;

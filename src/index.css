@@ -17,7 +17,7 @@ img {
   flex-wrap: wrap;
 }
 
-#cart {
+#cart-background {
   position:fixed;
   top: 0;
   width: 100vw;
@@ -25,10 +25,36 @@ img {
   background-color: rgba(128, 128, 128, 0.804);
 }
 
-#cart div {
+#cart {
   position:fixed;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   height: 100vh;
   width: 20vw;
   left: 80vw;
+  overflow: auto;
+}
+
+.cart-items-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item {
+  max-width: 200px;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  margin: 50px 0;
+}
+
+.counter {
+  display: flex;
+}
+
+.cart-item img {
+  max-width: 250px;
+  max-height: 250px;
 }
