@@ -11,6 +11,23 @@ function Shop() {
     items: allItems
   })
   const [cartItems, setCartItems] = useState([])
+  const [total, setTotal] = useState({
+    totalAmount: 0,
+    totalCost: 0,
+  })
+
+  const updateTotal = () => {
+    const totalCost = cartItems.map((item) => {
+      return item.Price * item.Amount;
+    }).reduce((a, b) => a + b, 0);
+    const totalAmount = cartItems.map((item) => {
+      return item.Amount;
+    }).reduce((a, b) => a + b, 0);
+    setTotal({
+      totalAmount: totalAmount,
+      totalCost: totalCost,
+    })
+  }
 
   const addItemToCart = (e) => {
     const newItemName = e.target.classList[0];
@@ -40,6 +57,7 @@ function Shop() {
       newlist[ind].Amount = newlist[ind].Amount+1;
       setCartItems(newlist)
     }
+    updateTotal();
   }
   
   const display = (e) => {
@@ -54,7 +72,7 @@ function Shop() {
 
   return (
     <div>
-    <Cart itemsInCart={cartItems} addItemToCart={addItemToCart}/>
+    <Cart itemsInCart={cartItems} addItemToCart={addItemToCart} total={total}/>
     <nav>
       <button onClick={display}>All</button>
       <button onClick={display}>Minerals</button>

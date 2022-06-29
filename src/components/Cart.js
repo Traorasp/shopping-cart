@@ -1,31 +1,15 @@
 import cart from '../Images/cart.png'
-import React, { useState, useEffect }from 'react';
+import React, { useState }from 'react';
 import PropTypes from 'prop-types';
 
 function Cart(props) {
   const [open, setOpen] = useState(false)
-  const {itemsInCart, addItemToCart} = props;
-  const [total, setTotal] = useState({
-    totalAmount: 0,
-    totalCost: 0,
-  })
+  const {itemsInCart, addItemToCart, total} = props;
 
   const toggleCart = () => {
     setOpen(!open)
   }
 
-  useEffect(() => {
-    const totalCost = itemsInCart.map((item) => {
-      return item.Price * item.Amount;
-    }).reduce((a, b) => a + b, 0);
-    const totalAmount = itemsInCart.map((item) => {
-      return item.Amount;
-    }).reduce((a, b) => a + b, 0);
-    setTotal({
-      totalAmount: totalAmount,
-      totalCost: totalCost,
-    })
-  }, [itemsInCart]);
 
   if(open) {
     return(
@@ -64,11 +48,13 @@ function Cart(props) {
 Cart.propTypes = {
   itemsInCart: PropTypes.array,
   addItemToCart: PropTypes.func,
+  total: PropTypes.object,
 }
 
 Cart.defaultProps = {
   itemsInCart: [],
   addItemToCart: () => {},
+  total: {},
 }
 
 
