@@ -20,7 +20,14 @@ function Shop() {
     const infoInd = allItems.findIndex((item) => {
       return item.Name.split(" ")[0] === newItemName
     })
-    if(ind === -1) {
+    if(e.target.textContent === '-') {
+      const list = cartItems;
+      list[ind].Amount = list[ind].Amount-1;
+      if(list[ind].Amount === 0) {
+        list.splice(ind, 1)
+      }  
+      setCartItems(list)
+    } else if(ind === -1) {
       setCartItems(cartItems.concat({
       Name: allItems[infoInd].Name,
       Img: allItems[infoInd].Img,
