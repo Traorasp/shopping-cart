@@ -7,3 +7,28 @@ body {
   width: 500px;
   height: 500px;
 }
+
+img {
+  max-width: 300px;
+}
+
+#item-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#cart {
+  position:fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.804);
+}
+
+#cart div {
+  position:fixed;
+  background-color: white;
+  height: 100vh;
+  width: 20vw;
+  left: 80vw;
+}

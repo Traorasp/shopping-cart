@@ -5,7 +5,7 @@ function Item(props) {
   const { items } = props;
 
   return (
-    <div>
+    <div id='item-list'>
       {items.map((item) => {
     return (
     <div key={item.id}>
