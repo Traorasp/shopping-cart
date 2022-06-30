@@ -13,7 +13,8 @@ function Cart(props) {
 
   if(open) {
     return(
-      <div id='cart-background'>
+      <div>
+        <div onClick={toggleCart} id='cart-background'></div>
         <div id='cart'>
           <h3 onClick={toggleCart}>Back</h3>
           <h2>Cart</h2>
@@ -31,15 +32,18 @@ function Cart(props) {
               </div>)
           })}
           </div>
-          <button>Checkout</button>
+          <div className='checkout'>
+            <p>Total: ${total.totalCost}</p>
+            <button>Checkout</button>
+          </div>
         </div>
       </div>
     )
   } else {
   return (
-    <div>
-      <img src={cart} alt='Shopping Cart' onClick={toggleCart}/>
-      <p>{total.totalAmount}</p>
+    <div className='cart-nav'>
+      <img className='cart-logo' src={cart} alt='Shopping Cart' onClick={toggleCart}/>
+      <p className='cart-count'>{total.totalAmount}</p>
     </div>
   );
   }

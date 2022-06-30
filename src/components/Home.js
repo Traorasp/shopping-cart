@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div>
-      <h1>Welcome to Fntasyne</h1>
+    <div id='home'>
+      <h1>Welcome to Fantasyne</h1>
       <h2>About</h2>
       <p>
         Welcome to Fantasyne the only online store to sell and deliver
@@ -12,7 +12,7 @@ function Home() {
         unique and magical materials in stock from mithril to dragon scales.
         Whatever you need we have.
       </p>
-      <Link to="/shop">Visit Shop!</Link> |{" "}
+      <Link to="/shop">Visit Shop!</Link> 
       <h2>Contact</h2>
       <p>Oznik the Dwarve in Oarth</p>
       <p>Email: fantasyne@AnotherWorld.com</p>

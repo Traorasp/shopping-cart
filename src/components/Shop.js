@@ -71,16 +71,18 @@ function Shop() {
   }
 
   return (
-    <div>
-    <Cart itemsInCart={cartItems} addItemToCart={addItemToCart} total={total}/>
-    <nav>
-      <button onClick={display}>All</button>
-      <button onClick={display}>Minerals</button>
-      <button onClick={display}>Monster Parts</button>
-    </nav>
-    <h1>{buying.title}</h1>
-    <Item items={buying.items} addItemToCart={addItemToCart}/>
-    </ div>
+    <div id='shop'>
+      <div className='shop-nav'>
+        <nav>
+          <button onClick={display}>All</button>
+          <button onClick={display}>Minerals</button>
+          <button onClick={display}>Monster Parts</button>
+        </nav>
+        <Cart itemsInCart={cartItems} addItemToCart={addItemToCart} total={total}/>
+      </div>
+      <h1>{buying.title}</h1>
+      <Item items={buying.items} addItemToCart={addItemToCart}/>
+    </div>
   );
 }
 

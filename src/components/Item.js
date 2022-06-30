@@ -8,7 +8,7 @@ function Item(props) {
     <div id='item-list'>
       {items.map((item) => {
     return (
-    <div key={item.id}>
+    <div key={item.id} className='item-card'>
       <img src={item.Img} />
       <h3>{item.Name}</h3>
       <p>${item.Price}</p>

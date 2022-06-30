@@ -5,8 +5,10 @@ function Nav() {
   return (
     <div id="Navigation">
       <h1>Fantasyne</h1>
-      <Link to="/">Home</Link> |{" "}
-      <Link to="/shop">Shop</Link> |{" "}
+      <div className='nav-links'>
+      <Link to="/">Home</Link> 
+      <Link to="/shop">Shop</Link> 
+      </div>
     </div>
   );
 }

@@ -1,6 +1,94 @@
 body {
   margin: 0;
+  text-shadow: white 0px 0px 10px;
+
 }
+
+button, nav, p, h1, h2, h3, div {
+  font-family: 'Crimson Text', serif;
+}
+
+
+button {
+  background-color: rgb(165, 128, 42);
+  color: white;
+  border: black solid 2px;
+}
+
+button:active {
+  background-color: rgb(190, 148, 50);
+  text-shadow: white 0px 0px 10px;
+}
+
+
+#home {
+  background: url(./Images/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 90vh;
+  box-sizing: border-box;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#home h1 {
+  text-align: center;
+}
+
+#home h2 {
+  font-size: 2.5rem;
+  color: rgb(153, 1, 1);
+  margin: ;
+}
+
+#home p {
+  font-size: 1.8rem;
+  color: black;
+  font-weight: 600;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin: 0;  
+}
+
+#Navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+  margin: 0;
+  padding: 0;
+  background: url(./Images/nav-background.webp) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10vw;
+}
+
+a {
+  width: 100px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: black;
+  text-decoration: none; 
+}
+
+a:hover{
+  color: purple;
+  font-weight: bold;
+} 
 
 .container {
   background-color: black;
@@ -9,52 +97,175 @@ body {
 }
 
 img {
-  max-width: 300px;
+  width: max(250px, 10%);
+  height: max(250px, 10%);
+}
+
+#shop {
+  background: url(./Images/shop-background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  box-sizing: border-box;
+  padding: 2%;
+}
+
+.shop-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop-nav nav {
+  display: flex;
+}
+
+.shop-nav nav button{
+  width: max(250px, 1fr);
+  height: max(50px, 10%);
+  font-size: 2.5rem;
+}
+
+.cart-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+
+.cart-count {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.cart-logo {
+  width: max(50px, 10%);
+  height: max(50px, 10%);
 }
 
 #item-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 4%;
+}
+
+.item-card {
+  max-width: max(250px, 10%);
+  max-height: max(250px, 10%);
+  margin: 2% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.item-card h3 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.item-card p{
+  word-wrap: break-word;
+  margin: 2px;
+  text-align: center;
+}
+
+.item-card button {
+  width: 80%;
+  height: 35px;
+  font-size: 1.5rem;
 }
 
 #cart-background {
-  position:fixed;
+  position: fixed;
   top: 0;
-  width: 100vw;
+  left: 0;
+  width: 80vw;
   height: 100vh;
   background-color: rgba(128, 128, 128, 0.804);
 }
 
 #cart {
-  position:fixed;
+  position: fixed;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: black;
   height: 100vh;
   width: 20vw;
   left: 80vw;
+  top: 0;
   overflow: auto;
+  padding: 0 15px;
+}
+
+#cart img {
+  width: 180px;
+  height: 180px;
+}
+
+#cart h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+#cart h3 {
+  font-size: 1.6rem;
 }
 
 .cart-items-display {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .cart-item {
-  max-width: 200px;
-  max-height: 200px;
+  width: 200px;
+  height: 200px;
   display: flex;
   flex-direction: column;
-  gap: 5%;
   margin: 50px 0;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.cart-item p {
+  margin: 4px;
 }
 
 .counter {
   display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  align-items: center;
 }
+
+.counter button {
+  font-size: 2rem;
+  margin: 5px;
+} 
+
 
 .cart-item img {
   max-width: 250px;
   max-height: 250px;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5%;
+  font-size: 2rem;
+}
+.checkout p {
+  margin: 0;
+}
+
+.checkout button {
+  width: 80%;
+  height: 50px;
+  font-size: 1.8rem;
 }
